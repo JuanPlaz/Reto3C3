@@ -26,11 +26,13 @@ public class ControllerCategory {
     }
 
     @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED) //Status Code 201.
     public Category updateCategory(@RequestBody Category cat){
         return sc.updateCategory(cat);
     }
 
     @DeleteMapping
+    @ResponseStatus(HttpStatus.NO_CONTENT)//Status Code 204.
     public void deleteCategory(@RequestBody Category cat){
         sc.deleteCategory(cat);
     }
@@ -41,6 +43,7 @@ public class ControllerCategory {
     }
 
     @DeleteMapping("/{doc}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)//Status Code 204.
     public void deleteCategoryById(@PathVariable("doc") int doc){
         sc.deleteCategoryById(doc);
     }

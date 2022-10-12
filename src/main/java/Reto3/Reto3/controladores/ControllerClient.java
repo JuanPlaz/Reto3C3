@@ -26,11 +26,13 @@ public class ControllerClient {
     }
 
     @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED) //Status Code 201.
     public Client updateClient(@RequestBody Client cli){
         return sc.updateClient(cli);
     }
 
     @DeleteMapping
+    @ResponseStatus(HttpStatus.NO_CONTENT)//Status Code 204.
     public void deleteClient(@RequestBody Client cli){
         sc.deleteClient(cli);
     }
@@ -41,6 +43,7 @@ public class ControllerClient {
     }
 
     @DeleteMapping("/{doc}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)//Status Code 204.
     public void deleteClientById(@PathVariable("doc") int doc){
         sc.deleteClientById(doc);
     }

@@ -26,11 +26,13 @@ public class ControllerBike {
     }
 
     @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED) //Status Code 201.
     public Bike updateBike(@RequestBody Bike bik){
         return sb.updateBike(bik);
     }
 
     @DeleteMapping
+    @ResponseStatus(HttpStatus.NO_CONTENT)//Status Code 204.
     public void deleteBike(@RequestBody Bike bik){
         sb.deleteBike(bik);
     }
@@ -41,6 +43,7 @@ public class ControllerBike {
     }
 
     @DeleteMapping("/{doc}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)//Status Code 204.
     public void deleteBikeById(@PathVariable("doc") int doc){
         sb.deleteBikeById(doc);
     }
