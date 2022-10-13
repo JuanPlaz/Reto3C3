@@ -31,7 +31,7 @@ public class ControllerClient {
         return sc.updateClient(cli);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/delete")
     @ResponseStatus(HttpStatus.NO_CONTENT)//Status Code 204.
     public void deleteClient(@RequestBody Client cli){
         sc.deleteClient(cli);

@@ -31,7 +31,7 @@ public class ControllerBike {
         return sb.updateBike(bik);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/delete")
     @ResponseStatus(HttpStatus.NO_CONTENT)//Status Code 204.
     public void deleteBike(@RequestBody Bike bik){
         sb.deleteBike(bik);

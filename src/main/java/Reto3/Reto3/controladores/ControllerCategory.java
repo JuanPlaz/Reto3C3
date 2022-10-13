@@ -31,7 +31,7 @@ public class ControllerCategory {
         return sc.updateCategory(cat);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/delete")
     @ResponseStatus(HttpStatus.NO_CONTENT)//Status Code 204.
     public void deleteCategory(@RequestBody Category cat){
         sc.deleteCategory(cat);

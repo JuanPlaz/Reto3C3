@@ -25,12 +25,14 @@ public class ControllerReservation {
         return sr.saveReservation(res);
     }
 
-    @PutMapping
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED) //Status Code 201.
     public Reservation updateReservation(@RequestBody Reservation res){
         return sr.updateReservation(res);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/delete")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteReservation(@RequestBody Reservation res){
         sr.deleteReservation(res);
     }
@@ -41,6 +43,7 @@ public class ControllerReservation {
     }
 
     @DeleteMapping("/{doc}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteReservationById(@PathVariable("doc") int doc){
         sr.deleteReservationById(doc);
     }
